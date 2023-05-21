@@ -67,16 +67,6 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
 
-def close_game(self):
-    """Save high score and exit"""
-    saved_high_score = self.stats.get_saved_high_score()
-    if self.stats.high_score > saved_high_score:
-        with open('high_score.json', 'w') as f:
-            json.dump(self.stats.high_score, f)
-
-
-    sys.exit()
-
 def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets):
     """Respond to keypresses and mouse events"""
     for event in pygame.event.get():
